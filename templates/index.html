@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="ui stackable grid">
+
+    <div class="six wide column">
+      <h4 class="ui orange header" id="fonts">Radovan Bast</h4>
+      <hr>
+      <div class="small-buffer">
+        {{ config.extra.about | markdown | safe }}
+      </div>
+      <div class="top-buffer">
+        <img src="{{ resize_image(path="img/radovan-bast.jpg", width=180, op="fit_width") | safe }}" alt="Radovan Bast" />
+      </div>
+    </div>
+
+    <div class="ten wide column">
+      <h4 class="ui orange header" id="fonts">Projects</h4>
+      <hr>
+
+      {% set data = load_data(path="content/projects/data.toml") %}
+
+      <div class="ui divided items">
+        {% for project in data.projects %}
+          {% if loop.index < 7 %}
+            <div class="item">
+              <div class="ui tiny image">
+                {% if project.image %}
+                  <a target="_blank" href="{{ project.url | safe }}">
+                    {% if 'http' in project.image %}
+                      <img src="{{ project.image | safe }}"
+                           alt="{{ project.name }} project icon"
+                           class="ui tiny image">
+                    {% else %}
+                      <img src="{{ resize_image(path="projects/" ~ project.image, width=150, op="fit_width") | safe }}"
+                           alt="{{ project.name }} project icon"
+                           class="ui tiny image">
+                    {% endif %}
+                  </a>
+                {% else %}
+                  <!-- <img src="/images/wireframe/image.png"> -->
+                {% endif %}
+              </div>
+              <div class="content">
+                <h5 class="ui header" id="fonts">
+                  <a target="_blank" href="{{ project.url | safe }}">{{ project.name }}</a>
+                </h5>
+                <div class="description">
+                  <p>{{ project.text | markdown | safe }}</p>
+                </div>
+                {% if project.role %}
+                  <div class="extra">
+                    My role: {{ project.role }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="ui floating message">
+        <a href="/projects/">More projects ...</a>
+      </div>
+
+      <hr class="top-buffer">
+      <p>
+        Small things I learned recently:
+        <a target="_blank" href="https://github.com/bast/til">https://github.com/bast/til</a>
+      </p>
+
+    </div>
+
+  </div>
+{% endblock content %}
