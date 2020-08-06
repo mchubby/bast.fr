@@ -292,6 +292,7 @@ Generic input parsing library, speaking in tongues.
 Code is on [GitHub](https://github.com/dev-cafe/parselglossy).
 Documentation is on [Read the Docs](https://parselglossy.readthedocs.io/).
 """
+role = "Co-author"
 
 [[projects]]
 name = "Smeshing"
