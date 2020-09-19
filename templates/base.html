@@ -15,6 +15,20 @@
       <meta name="twitter:image" content="{{ config.extra.twitter_image | safe }}" />
     {% endif %}
 
+    {% if page.description %}
+      <meta name="description" content="{{ page.description }}" />
+      <meta name="twitter:description" content="{{ page.description }}" />
+    {% else %}
+      <meta name="description" content="{{ config.description }}" />
+      <meta name="twitter:description" content="{{ config.description }}" />
+    {% endif %}
+
+    {% if page.title %}
+      <meta name="twitter:title" content="{{ page.title }}" />
+    {% else %}
+      <meta name="twitter:title" content="{{ config.title }}" />
+    {% endif %}
+
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" integrity="sha256-UXesixbeLkB/UYxVTzuj/gg3+LMzgwAmg3zD+C4ZASQ=" crossorigin="anonymous">
