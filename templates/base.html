@@ -29,14 +29,16 @@
       </div>
 
       <div class="top-buffer">
-        {% if page.title %}
-          <h4 class="ui orange header" id="fonts">{{ page.title }}</h4>
-          <hr>
-        {% endif %}
-        {% if section.title %}
-          <h4 class="ui orange header" id="fonts">{{ section.title }}</h4>
-          <hr>
-        {% endif %}
+        {% block page_title %}
+          {% if page.title %}
+            <h4 class="ui orange header" id="fonts">{{ page.title }}</h4>
+            <hr>
+          {% endif %}
+          {% if section.title %}
+            <h4 class="ui orange header" id="fonts">{{ section.title }}</h4>
+            <hr>
+          {% endif %}
+        {% endblock page_title %}
 
         {% block content %}
         {% endblock content %}
