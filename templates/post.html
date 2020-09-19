@@ -4,10 +4,12 @@
 {% endblock page_title %}
 
 {% block content %}
-  <h1 class="ui orange header">{{ page.title }}</h1>
-  {{ page.date | date(format="%B %d, %Y") }}
+  <div class="post">
+    <h1 class="ui orange header">{{ page.title }}</h1>
+    {{ page.date | date(format="%B %d, %Y") }}
 
-  <div class="top-buffer post">
-    {{ page.content | safe }}
+    <div class="top-buffer">
+      {{ page.content | safe }}
+    </div>
   </div>
 {% endblock content %}
