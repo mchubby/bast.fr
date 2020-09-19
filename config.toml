@@ -24,6 +24,8 @@ navigation = [
   { name = "Bookmarks", path = "/bookmarks/" }
 ]
 
+twitter_image = "https://bast.fr/img/avatar.jpg"
+
 about = """
 I am a theoretical chemist turned research software engineer.
 

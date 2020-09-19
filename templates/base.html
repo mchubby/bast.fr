@@ -10,6 +10,11 @@
 
     <title>Radovan Bast | Home Sweet Home</title>
 
+    {% if config.extra.twitter_image %}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="{{ config.extra.twitter_image | safe }}" />
+    {% endif %}
+
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" integrity="sha256-UXesixbeLkB/UYxVTzuj/gg3+LMzgwAmg3zD+C4ZASQ=" crossorigin="anonymous">
