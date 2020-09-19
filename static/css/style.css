@@ -1,13 +1,13 @@
-body {
-  font-family: 'Archivo Narrow', sans-serif;
-  padding-bottom: 100px;
-}
+/* body { */
+/*   font-family: 'Archivo Narrow', sans-serif; */
+/*   padding-bottom: 100px; */
+/* } */
 
 /* https://medium.com/@yukiyao/use-a-different-font-in-semantic-ui-ffba49dd473b */
-body #fonts {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-weight: normal;
-}
+/* body #fonts { */
+/*   font-family: 'Archivo Narrow', sans-serif; */
+/*   font-weight: normal; */
+/* } */
 
 .top-buffer {
   margin-top: 25px;
@@ -19,4 +19,8 @@ body #fonts {
 
 .bottom-buffer {
   margin-bottom: 150px;
+}
+
+.post a:link {
+  text-decoration: underline;
 }
