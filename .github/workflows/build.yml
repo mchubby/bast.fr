@@ -5,17 +5,34 @@ on:
     branches:
       - source
   pull_request:
+    branches:
+      - source
 
 jobs:
-  build_and_deploy:
-    runs-on: ubuntu-latest
+  build:
+    # we use mac because zola is not distributed in ubuntu (?)
+    # and I did not want to cargo build zola as part of the workflow
+    runs-on: macos-10.15
     if: github.ref == 'refs/heads/source'
+    env:
+      TARGET_BRANCH: master
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@master
-      - name: 'Build and deploy'
-        uses: shalzz/zola-deploy-action@master
-        env:
-          PAGES_BRANCH: master
-          BUILD_DIR: .
-          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Install zola
+      run: brew install zola
+    - name: Generate HTML
+      run: zola build
+    - name: Commit and push to target branch
+      run: |-
+        git config --global user.email "workflow-bot@example.com"
+        git config --global user.name "workflow-bot"
+        git checkout --orphan $TARGET_BRANCH
+        git rm --cached -r .
+        mv public ..
+        rm -rf *
+        mv ../public/* .
+        touch .nojekyll
+        git add .
+        git commit -m "generated using zola build"
+        git push --set-upstream origin $TARGET_BRANCH --force
