@@ -28,6 +28,12 @@
 .post {
   font-size: 1.2em;
   margin-top: 75px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.post h2 {
+  margin-top: 40px;
 }
 
 code {
