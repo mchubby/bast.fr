@@ -25,11 +25,16 @@
   text-decoration: underline;
 }
 
+@media all and (max-width: 1000px) and (min-width: 700px) {
+  .post {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
+
 .post {
-  font-size: 1.2em;
   margin-top: 75px;
-  margin-left: 100px;
-  margin-right: 100px;
+  font-size: 1.2em;
 }
 
 .post h2 {
