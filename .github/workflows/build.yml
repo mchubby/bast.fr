@@ -30,20 +30,6 @@ jobs:
         | sudo tar xzf - -C /usr/local/bin
     - name: Generate HTML
       run: zola build
-    # Add CNAME, either (first one used)
-    # - file in the root
-    # - the environment variable set above
-    - name: add CNAME
-      run: |
-        if [ -f CNAME ] ; then
-            mv CNAME public/
-            echo "Copied CNAME from repository root"
-            exit 0
-        fi
-        if [ -n ${{ env.CNAME }} ] ; then
-            echo -n ${{ env.CNAME }} > public/CNAME
-            echo "Used CNAME from the action workflow file"
-        fi
     - name: Deploy to target branch
       if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}', env.SOURCE_BRANCH) && ( env.DEPLOY_ORGANIZATION == '' || github.repository_owner == env.DEPLOY_ORGANIZATION ) }}
       uses: peaceiris/actions-gh-pages@v3
