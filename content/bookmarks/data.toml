@@ -1001,10 +1001,6 @@ url = "https://www.filestack.com"
 text = "Filestack"
 
 [[sections.links]]
-url = "https://formkeep.com"
-text = "FormKeep"
-
-[[sections.links]]
 url = "https://jaspervdj.be/hakyll/"
 text = "Hakyll"
 
