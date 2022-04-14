@@ -3,7 +3,8 @@
 {% block content %}
   <div class="ui stackable grid">
     <div class="four wide column">
-      <img src="{{ resize_image(path="img/radovan-bast.jpg", width=180, op="fit_width") | safe }}" alt="Radovan Bast" />
+      {% set img = resize_image(path="img/radovan-bast.jpg", width=180, op="fit_width") %}
+      <img src="{{ img.url }}" alt="Radovan Bast" />
     </div>
     <div class="twelve wide column">
       <p>

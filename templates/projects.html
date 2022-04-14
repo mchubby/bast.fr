@@ -14,7 +14,8 @@
                      alt="{{ project.name }} project icon"
                      class="ui tiny image">
               {% else %}
-                <img src="{{ resize_image(path="projects/" ~ project.image, width=150, op="fit_width") | safe }}"
+                {% set img = resize_image(path="projects/" ~ project.image, width=150, op="fit_width") %}
+                <img src="{{ img.url }}"
                      alt="{{ project.name }} project icon"
                      class="ui tiny image">
               {% endif %}

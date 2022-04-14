@@ -10,7 +10,8 @@
         {{ config.extra.about | markdown | safe }}
       </div>
       <div class="top-buffer">
-        <img src="{{ resize_image(path="img/radovan-bast.jpg", width=180, op="fit_width") | safe }}" alt="Radovan Bast" />
+        {% set img = resize_image(path="img/radovan-bast.jpg", width=180, op="fit_width") %}
+        <img src="{{ img.url }}" alt="Radovan Bast" />
       </div>
     </div>
 
@@ -32,7 +33,8 @@
                            alt="{{ project.name }} project icon"
                            class="ui tiny image">
                     {% else %}
-                      <img src="{{ resize_image(path="projects/" ~ project.image, width=150, op="fit_width") | safe }}"
+                      {% set img = resize_image(path="projects/" ~ project.image, width=150, op="fit_width") %}
+                      <img src="{{ img.url }}"
                            alt="{{ project.name }} project icon"
                            class="ui tiny image">
                     {% endif %}
