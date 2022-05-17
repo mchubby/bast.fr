@@ -110,7 +110,7 @@ jobs:
 ```
 
 You may need to adapt the source branch (this is where the Zola sources are; in
-this example: `source`, mentioned three times) and the target branch (this is
+this example: `main`, mentioned three times) and the target branch (this is
 the branch which contains the generated HTML and is used by GitHub Pages; in
 this example: `TARGET_BRANCH: master`).
 
@@ -122,7 +122,7 @@ modified.
   `github.com/myproject/myproject.github.io`.
 
 - For project pages of the form `github.com/mynamespace/myproject` the source
-  branch is typically `master` and the target branch is typically `gh-pages`.
+  branch is typically `main` and the target branch is typically `gh-pages`.
 
 But the nice thing is that the above workflow is easily adaptable to either
 situation.
