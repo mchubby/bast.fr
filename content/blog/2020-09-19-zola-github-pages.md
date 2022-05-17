@@ -144,6 +144,6 @@ GitHub Pages under the repository settings page. That's it!
 [Zola](https://www.getzola.org/) is a really nice tool with great documentation - try it out!
 Indeed, this website is built using Zola and
 [here](https://github.com/bast/bast.github.io/blob/main/.github/workflows/build.yml)
-is the workflow that I am using to build this site.
+is the workflow that I am using to build this site. *Edit: Do note the current workflow now relies on an Ubuntu builder which pulls the Linux Zola binaries directly from the official repository.*
 With the above recipe setting up a Zola build is no more difficult than setting
 up a Jekyll build.
